@@ -1,2 +1,2 @@
 # alkes
-This is a simple project using firefly
+This is a simple project using hiperledger
