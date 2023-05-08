@@ -7,11 +7,11 @@ import (
 	"github.com/hyperledger/fabric-contract-api-go/contractapi"
 )
 
-type MyContract struct {
+type TFMContract struct {
 	contractapi.Contract
 }
 
-func (c *MyContract) Sum(ctx contractapi.TransactionContextInterface, value1Str string, value2Str string) (int, error) {
+func (c *TFMContract) Sum(ctx contractapi.TransactionContextInterface, value1Str string, value2Str string) (int, error) {
 	value1, err := strconv.Atoi(value1Str)
 	if err != nil {
 		return 0, fmt.Errorf("failed to convert value1 to integer: %v", err)
@@ -26,7 +26,7 @@ func (c *MyContract) Sum(ctx contractapi.TransactionContextInterface, value1Str 
 }
 
 func main() {
-	chaincode, err := contractapi.NewChaincode(&MyContract{})
+	chaincode, err := contractapi.NewChaincode(&TFMContract{})
 	if err != nil {
 		fmt.Printf("Error creating chaincode: %s", err.Error())
 		return
